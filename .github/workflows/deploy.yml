@@ -1,44 +1,63 @@
-name: Deploy TideLine
+Commit 9df0fa1
+SejalTapase-AI
+SejalTapase-AI
+authored
+17 minutes ago
+·
+·
+Verified
+Create deploy.yml
+main
+1 parent 
+65d3835
+ commit 
+9df0fa1
+1 file changed
 
++44
+Lines changed: 44 additions & 0 deletions
+File tree
+Filter files…
+.github/workflows
+deploy.yml
+Search within code
+ 
+‎.github/workflows/deploy.yml‎
++44
+Lines changed: 44 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,44 @@
+name: Deploy TideLine
 on:
   push:
     branches:
       - main
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.47.1'
           channel: stable
-
       - name: Get dependencies
         run: flutter pub get
-
       - name: Build Flutter Web
         run: flutter build web --release --base-href "/tideline/"
-
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
