@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TideLine — Climate Risk Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SCREEN 1 — HOME
+    ========================== -->
+
+    <section id="home" class="screen active">
+
+        <header class="topbar">
+            <div class="logo">
+                <span class="logo-wave">≈</span> TideLine
+            </div>
+
+            <button class="menu-btn">☰</button>
+        </header>
+
+
+        <main class="home-content">
+
+            <div class="hero-badge">
+                CLIMATE INTELLIGENCE
+            </div>
+
+            <h1>
+                Know the risk<br>
+                <span>before you buy.</span>
+            </h1>
+
+            <p class="hero-description">
+                Climate intelligence for coastal property decisions.
+            </p>
+
+
+            <div class="search-box">
+
+                <span class="search-icon">⌖</span>
+
+                <div>
+                    <small>PROPERTY LOCATION</small>
+                    <p>Search property location</p>
+                </div>
+
+            </div>
+
+
+            <button class="primary-btn" onclick="showScreen('property')">
+                CHECK RISK
+                <span>→</span>
+            </button>
+
+
+            <div class="home-info">
+
+                <div class="info-item">
+                    <strong>2030</strong>
+                    <span>Risk projection</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>2040</strong>
+                    <span>Risk projection</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>2050</strong>
+                    <span>Risk projection</span>
+                </div>
+
+            </div>
+
+
+            <div class="wave-graphic">
+                <div class="wave wave-one"></div>
+                <div class="wave wave-two"></div>
+                <div class="wave wave-three"></div>
+
+                <div class="map-pin">●</div>
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 2 — PROPERTY
+    ========================== -->
+
+    <section id="property" class="screen">
+
+        <header class="screen-header">
+
+            <button class="back-btn" onclick="showScreen('home')">
+                ←
+            </button>
+
+            <h2>Property Location</h2>
+
+        </header>
+
+
+        <main class="property-content">
+
+            <p class="section-label">
+                WHERE IS THE PROPERTY?
+            </p>
+
+
+            <div class="location-card">
+
+                <div class="location-icon">
+                    ⌖
+                </div>
+
+                <div>
+                    <strong>Worli Sea Face</strong>
+                    <p>Mumbai, Maharashtra</p>
+                </div>
+
+                <span class="edit-location">✎</span>
+
+            </div>
+
+
+            <div class="map-container">
+
+                <div class="map-grid"></div>
+
+                <div class="map-road road-one"></div>
+                <div class="map-road road-two"></div>
+                <div class="map-road road-three"></div>
+
+                <div class="map-water"></div>
+
+                <div class="large-pin">
+                    <span>●</span>
+                </div>
+
+                <div class="map-label">
+                    WORLI
+                </div>
+
+            </div>
+
+
+            <p class="section-label property-type-label">
+                PROPERTY TYPE
+            </p>
+
+
+            <div class="property-options">
+
+                <button class="property-option selected">
+                    <span>▦</span>
+                    Apartment
+                </button>
+
+                <button class="property-option">
+                    <span>⌂</span>
+                    House
+                </button>
+
+                <button class="property-option">
+                    <span>▤</span>
+                    Commercial
+                </button>
+
+            </div>
+
+
+            <button class="primary-btn" onclick="startAnalysis()">
+                ANALYZE RISK
+                <span>→</span>
+            </button>
+
+        </main>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 3 — ANALYZING
+    ========================== -->
+
+    <section id="analysis" class="screen">
+
+        <main class="analysis-screen">
+
+            <div class="analysis-logo">
+                <span>≈</span>
+            </div>
+
+            <p class="analysis-label">
+                TIDELINE AI
+            </p>
+
+            <h2>
+                Analyzing<br>
+                property risk
+            </h2>
+
+
+            <div class="progress-container">
+
+                <div class="progress-circle">
+                    <div class="progress-inner">
+                        <strong id="progress-number">0%</strong>
+                        <span>ANALYZING</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="analysis-checklist">
+
+                <div class="check-item completed">
+                    <span>✓</span>
+                    <p>Location data</p>
+                </div>
+
+                <div class="check-item completed">
+                    <span>✓</span>
+                    <p>Flood exposure</p>
+                </div>
+
+                <div class="check-item completed">
+                    <span>✓</span>
+                    <p>Elevation</p>
+                </div>
+
+                <div class="check-item active-check">
+                    <span>◉</span>
+                    <p>Climate projections</p>
+                </div>
+
+                <div class="check-item">
+                    <span>○</span>
+                    <p>Property value risk</p>
+                </div>
+
+            </div>
+
+
+            <p class="analysis-footer">
+                Combining climate + property data...
+            </p>
+
+        </main>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 4 — TIDESCORE
+    ========================== -->
+
+    <section id="result" class="screen">
+
+        <header class="screen-header">
+
+            <button class="back-btn" onclick="showScreen('property')">
+                ←
+            </button>
+
+            <h2>Risk Assessment</h2>
+
+        </header>
+
+
+        <main class="result-content">
+
+            <div class="property-name">
+                <strong>Worli Sea Face</strong>
+                <span>Mumbai, Maharashtra</span>
+            </div>
+
+
+            <div class="score-section">
+
+                <p class="score-label">
+                    TIDESCORE™
+                </p>
+
+                <div class="score-number">
+                    82
+                </div>
+
+                <div class="risk-badge">
+                    HIGH RISK
+                </div>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item moderate">
+                    <strong>2030</strong>
+                    <span>MODERATE</span>
+                </div>
+
+                <div class="timeline-item high">
+                    <strong>2040</strong>
+                    <span>HIGH</span>
+                </div>
+
+                <div class="timeline-item severe">
+                    <strong>2050</strong>
+                    <span>SEVERE</span>
+                </div>
+
+            </div>
+
+
+            <div class="risk-summary">
+
+                <div class="risk-row">
+
+                    <div class="risk-name">
+                        <span>≈</span>
+                        Flood exposure
+                    </div>
+
+                    <strong>HIGH</strong>
+
+                </div>
+
+
+                <div class="risk-row">
+
+                    <div class="risk-name">
+                        <span>↗</span>
+                        Climate exposure
+                    </div>
+
+                    <strong>HIGH</strong>
+
+                </div>
+
+
+                <div class="risk-row">
+
+                    <div class="risk-name">
+                        <span>₹</span>
+                        Property value risk
+                    </div>
+
+                    <strong>HIGH</strong>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-btn" onclick="showScreen('report')">
+                VIEW RISK REPORT
+                <span>→</span>
+            </button>
+
+        </main>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 5 — REPORT
+    ========================== -->
+
+    <section id="report" class="screen">
+
+        <header class="screen-header">
+
+            <button class="back-btn" onclick="showScreen('result')">
+                ←
+            </button>
+
+            <h2>Risk Report</h2>
+
+        </header>
+
+
+        <main class="report-content">
+
+            <div class="report-heading">
+
+                <p>PROPERTY ASSESSMENT</p>
+
+                <h3>
+                    Worli Sea Face
+                </h3>
+
+                <span>
+                    Mumbai · Maharashtra
+                </span>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-card-top">
+                    <span>🌊</span>
+
+                    <div>
+                        <strong>Flood Exposure</strong>
+                        <small>Projected coastal exposure</small>
+                    </div>
+
+                    <b>HIGH</b>
+                </div>
+
+                <div class="risk-bar">
+                    <div style="width: 82%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-card-top">
+                    <span>↗</span>
+
+                    <div>
+                        <strong>Climate Exposure</strong>
+                        <small>Long-term climate projection</small>
+                    </div>
+
+                    <b>HIGH</b>
+                </div>
+
+                <div class="risk-bar">
+                    <div style="width: 76%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-card-top">
+                    <span>₹</span>
+
+                    <div>
+                        <strong>Property Value Risk</strong>
+                        <small>Potential long-term exposure</small>
+                    </div>
+
+                    <b>HIGH</b>
+                </div>
+
+                <div class="risk-bar">
+                    <div style="width: 70%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="action-card">
+
+                <div class="action-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <small>RECOMMENDED ACTION</small>
+
+                    <h3>AVOID</h3>
+
+                    <p>
+                        Consider lower-risk alternatives before purchasing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="action-buttons">
+
+                <button>BUY</button>
+                <button>WAIT</button>
+                <button class="avoid-button">AVOID</button>
+
+            </div>
+
+
+            <button class="secondary-btn" onclick="showScreen('home')">
+                CHECK ANOTHER PROPERTY
+            </button>
+
+        </main>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
